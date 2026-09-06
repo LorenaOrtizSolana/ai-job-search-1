@@ -1,0 +1,152 @@
+%% Template: modern-navy CV
+%% Comprehensive master reference, profile-agnostic ([PLACEHOLDER] tokens).
+%% German-language design: clean sans-serif, navy section rules, two-column
+%% skills table. Standalone article-class design -- NOT moderncv.
+%%
+%% Compile with: lualatex template.tex
+
+\documentclass[10pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Heros}
+\usepackage[a4paper,margin=1.15cm,top=0.9cm,bottom=0.9cm]{geometry}
+\usepackage{xcolor}
+\definecolor{navy}{HTML}{1B3A5C}
+\definecolor{gray}{HTML}{555555}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=navy,urlcolor=navy,pdftitle={[YOUR_NAME] - Lebenslauf}}
+\usepackage{array}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagenumbering{gobble}
+
+% German text has long unhyphenated compounds and no German hyphenation
+% patterns are loaded (avoiding babel/polyglossia - both trigger a MiKTeX
+% on-the-fly install hang for the German .ldf/pattern files in this
+% sandbox); allow extra stretch instead so lines don't overflow the margin.
+\tolerance=2500
+\emergencystretch=2.5em
+\hbadness=10000
+
+% Compact list spacing (plain article \@listI -- no enumitem dependency)
+\makeatletter
+\renewcommand\@listI{\leftmargin\leftmargini
+  \topsep=1pt \itemsep=0pt \parsep=0pt}
+\@listi
+\makeatother
+
+% ---- section formatting: bold navy label, own line, full-width rule below ----
+\newcommand{\cvsection}[1]{%
+  \par\vspace{3pt}
+  {\bfseries\color{navy}\fontsize{10.5}{12}\selectfont #1}\par
+  \vspace{0pt}
+  \noindent{\color{navy}\rule{\linewidth}{0.9pt}}\par
+  \vspace{2pt}}
+
+% ---- entry helper: title/date on one line, subtitle/location on the next ----
+\newcommand{\entryhead}[2]{%
+  {\bfseries #1}\hfill{\color{gray}#2}\par}
+\newcommand{\entrysub}[2]{%
+  {\itshape\color{gray}\small #1}\hfill{\itshape\color{gray}\small #2}\par\vspace{1pt}}
+
+\begin{document}
+
+% ============================================================
+%     HEADER
+% ============================================================
+{\fontsize{25}{27}\selectfont\bfseries\color{navy}[YOUR_NAME]}\par
+\vspace{2pt}
+{\color{gray}\large [Your Field] \textbar\ [Your Specializations]}\par
+\vspace{4pt}
+{\small [Your Address, City, Postcode] \textbar\ [+XX XXXXXXXXXX] \textbar\ \href{mailto:[your.email@example.com]}{[your.email@example.com]}\\
+\href{[https://linkedin.com/in/your-profile]}{[linkedin.com/in/your-profile]} \textbar\ [Optional: date/place of birth, nationality, or other line German CVs conventionally include]}\par
+\vspace{2pt}
+\noindent{\color{navy}\rule{\linewidth}{1.1pt}}
+
+% ============================================================
+%     PROFIL
+% ============================================================
+\cvsection{Profil}
+\small
+[Write a 3-5 sentence profile statement tailored to the role, in German. Focus on what makes you uniquely qualified: field of study, hands-on experience, and the kind of ownership you like to take.]
+
+% ============================================================
+%     BERUFSERFAHRUNG
+% ============================================================
+\cvsection{Berufserfahrung}
+\small
+\entryhead{[Employer] \textperiodcentered\ [Job Title]}{[MM/YYYY -- MM/YYYY]}
+\entrysub{[Team/Department]}{[City]}
+\begin{itemize}
+  \item [Achievement/responsibility bullet 1 -- be concrete, quantify where possible]
+  \item [Achievement/responsibility bullet 2]
+  \item [Achievement/responsibility bullet 3]
+\end{itemize}
+\vspace{2pt}
+\textbf{[Sub-project or notable initiative title]} -- [one-line description]
+\begin{itemize}
+  \item [Detail bullet 1]
+  \item [Detail bullet 2]
+\end{itemize}
+
+% ============================================================
+%     PROJEKTE
+% ============================================================
+\cvsection{Projekte}
+\small
+\entryhead{[Project Name] (\href{[https://github.com/your-username/project]}{GitHub})}{[MM/YYYY]}
+\entrysub{[Personal Project \textperiodcentered\ Tech stack]}{}
+\begin{itemize}
+  \item [What you built and why]
+  \item [A concrete, quantified result]
+\end{itemize}
+\vspace{3pt}
+
+\entryhead{[Project Name 2]}{[MM/YYYY -- MM/YYYY]}
+\entrysub{[Institution/Context]}{}
+\begin{itemize}
+  \item [Bullet 1]
+  \item [Bullet 2]
+\end{itemize}
+
+% ============================================================
+%     AUSBILDUNG
+% ============================================================
+\cvsection{Ausbildung}
+\small
+\entryhead{[Institution]}{[MM/YYYY -- MM/YYYY]}
+\entrysub{[Degree, Field]}{}
+\begin{itemize}
+  \item [Grade / honors / scholarship, if relevant]
+\end{itemize}
+
+% ============================================================
+%     AUSSERSCHULISCHES ENGAGEMENT
+% ============================================================
+\cvsection{Ausserschulisches Engagement}
+\small
+\entryhead{[Organization] \textperiodcentered\ [Role]}{[MM/YYYY -- MM/YYYY]}
+\entrysub{[Context]}{[City]}
+\begin{itemize}
+  \item [Bullet 1]
+\end{itemize}
+
+% ============================================================
+%     TECHNISCHE FÄHIGKEITEN
+% ============================================================
+\cvsection{Technische Fähigkeiten}
+\small
+\begin{tabular}{@{}>{\bfseries}p{4.4cm}p{12.9cm}@{}}
+[Category 1] & [Skills, tools, frameworks] \\[2pt]
+[Category 2] & [Skills, tools, frameworks] \\[2pt]
+[Category 3] & [Skills, tools, frameworks] \\
+\end{tabular}
+
+% ============================================================
+%     SPRACHEN
+% ============================================================
+\cvsection{Sprachen}
+\small
+\textbf{[Language 1]} [Level] \textbar\ \textbf{[Language 2]} [Level] \textbar\ \textbf{[Language 3]} [Level]
+
+\end{document}
