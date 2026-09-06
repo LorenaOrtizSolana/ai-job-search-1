@@ -26,6 +26,10 @@ salary_data.json
 **/job_scraper/seen_jobs.json
 **/job_scraper/notion_sync.json
 **/job_scraper/*.md
+# Per-run session summaries (Master Routine Step 15) - same personal-data
+# sensitivity as the rest of job_scraper/, but nested one level deeper, so
+# the job_scraper/*.md pattern above doesn't reach it.
+**/job_scraper/session_summaries/*.md
 # Job-match source spreadsheets (manual /rank-equivalent batches): same
 # sensitivity as the CV/cover-letter files - company+role+date reveal
 # exactly where and when she is applying.
