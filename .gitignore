@@ -26,6 +26,10 @@ salary_data.json
 **/job_scraper/seen_jobs.json
 **/job_scraper/notion_sync.json
 **/job_scraper/*.md
+# Job-match source spreadsheets (manual /rank-equivalent batches): same
+# sensitivity as the CV/cover-letter files - company+role+date reveal
+# exactly where and when she is applying.
+**/job_scraper/*.xlsx
 *_BehavioralReport.pdf
 linkedin_Profile.pdf
 
