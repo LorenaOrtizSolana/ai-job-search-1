@@ -17,6 +17,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Identity
 - **Name:** Ana Lorena Ortiz Loyola
+- **Citizenship:** Mexican and Spanish (dual national, EU/EEA citizen) - satisfies "EU nationals only" / "EU/EEA nationals" eligibility requirements on job postings (e.g. ECB traineeships, VIE contracts). Not specific to Germany - this is EU-wide citizenship, not a German-nationality requirement.
 - **Location:** Frankfurt am Main, Germany (based in Frankfurt am Main; open to Frankfurt-area roles or remote/hybrid within Germany)
 - **LinkedIn:** linkedin.com/in/lorenasolana
 - **Languages:**
